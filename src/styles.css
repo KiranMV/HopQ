@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+.main-panel {
+    float: right;
+    width: calc(100% - 251px);
+    min-height: 100vh;
+    position: relative;
+}

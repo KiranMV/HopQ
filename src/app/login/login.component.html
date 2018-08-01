@@ -1,0 +1,73 @@
+<!-- Login page -->
+<div class="col-md-12 col-xs-12 marfill">
+  <p-messages [(value)]="msgs"></p-messages>
+  <div class="customDiv">
+    <!-- organization Logo -->
+    <img src="assets/logo.png" width="27%`" style="margin-left:37%;">
+    <div class="container-fluid">
+      <!-- card -->
+      <div class="card">
+        <!-- Card body login screen-->
+        <div *ngIf="register" class="card-body">
+          <div class="form-group">
+            <label for="Login" style="color:blue">Login</label>
+          </div>
+          <form [formGroup]="loginForm">
+            <div class="form-group">
+              <label for="Username">Username</label>
+              <input type="text" formControlName="username" name="focus" class="form-control" id="username" placeholder="Enter Username..."
+                required>
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password</label>
+              <input type="password" formControlName="password" class="form-control" id="pwd" placeholder="Enter Password..." required>
+            </div>
+            <div>
+              <div class="col-md-3">
+                <input type="submit" (click)="loginFormClick()" class="btn btn-primary" value="LOGIN" />
+              </div>
+              <div class="col-md-3">
+                <input type="submit" (click)="gotoRegister()" class="btn" value="SIGN UP" />
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Card body login screen-->
+        <!-- Card body register screen-->
+        <div *ngIf="!register" class="card-body">
+          <div class="form-group">
+            <label for="Login" style="color:blue">Sign Up</label>
+          </div>
+          <form [formGroup]="registerForm">
+            <div class="form-group">
+              <label for="Username">Username</label>
+              <input type="text" formControlName="username" name="focus" class="form-control" id="username" placeholder="Enter Username..."
+                required>
+            </div>
+            <div class="form-group">
+              <label for="Email">Email</label>
+              <input type="text" formControlName="email" name="focus" class="form-control" id="email" placeholder="Enter Email..." required>
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password</label>
+              <input type="password" formControlName="password" class="form-control" id="pwd" placeholder="Enter Password..." required>
+            </div>
+            <div>
+              <div class="col-md-3 padRht">
+                <input type="submit" (click)="signUp()" class="btn btn-primary" value="SIGN UP" />
+              </div>
+              <div class="col-md-3">
+                <input type="submit" (click)="gotoRegister()" class="btn" value="LOGIN" />
+              </div>
+
+            </div>
+          </form>
+        </div>
+        <!-- Card body -->
+      </div>
+      <!-- Card -->
+    </div>
+    <!-- container-fluid -->
+  </div>
+  <!-- customDiv -->
+</div>
